@@ -20,49 +20,65 @@ static_resources:
                 scheme_header_transformation:
                   scheme_to_overwrite: https
                 stat_prefix: ingress_http
+                # Output envoy logs to stdout
+                access_log:
+                  - name: envoy.access_loggers.stdout
+                    typed_config:
+                      "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
+                # Modify as required
                 route_config:
                   name: local_route
                   virtual_hosts:
                     - name: local_service
-                      domains: ["*"]
+                      domains: [ "*" ]
                       routes:
                         - match:
                             prefix: "/"
                           route:
-                            cluster: httpbin
+                            cluster: claude
+                            timeout: 300s
                 http_filters:
-                  - name: wasmdemo
+                  - name: claude
                     typed_config:
                       "@type": type.googleapis.com/udpa.type.v1.TypedStruct
                       type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
                       value:
                         config:
-                          name: wasmdemo
+                          name: claude
                           vm_config:
                             runtime: envoy.wasm.runtime.v8
                             code:
                               local:
-                                filename: /etc/envoy/main.wasm
+                                filename: /etc/envoy/plugin.wasm
                           configuration:
                             "@type": "type.googleapis.com/google.protobuf.StringValue"
-                            value: |
+                            value: | # 插件配置
                               {
-                                "mockEnable": false
+                                "provider": {
+                                  "type": "claude",                                
+                                  "apiTokens": [
+                                    "YOUR_API_TOKEN"
+                                  ]                  
+                                }
                               }
                   - name: envoy.filters.http.router
   clusters:
-    - name: httpbin
+    - name: claude
       connect_timeout: 30s
       type: LOGICAL_DNS
-      # Comment out the following line to test on v6 networks
       dns_lookup_family: V4_ONLY
       lb_policy: ROUND_ROBIN
       load_assignment:
-        cluster_name: httpbin
+        cluster_name: claude
         endpoints:
           - lb_endpoints:
               - endpoint:
                   address:
                     socket_address:
-                      address: httpbin
-                      port_value: 80
+                      address: api.anthropic.com # API 服务地址
+                      port_value: 443
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+          "sni": "api.anthropic.com"
