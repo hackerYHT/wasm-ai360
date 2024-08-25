@@ -60,10 +60,8 @@ static_resources:
                                     "fk3181337376.JM3tvs2UuEvWywnzxDUvFPrC-z_h4_V-dc49d667"
                                   ],
                                   "modelMapping": {
-                                  "gpt-4o": "360gpt-turbo-responsibility-8k",
-                                  "gpt-4": "360gpt2-pro",
-                                  "gpt-3.5": "360gpt-turbo",
-                                  "*": "360gpt-pro"
+                                  "gpt-4-turbo-preview": "360gpt2-pro",
+                                  "text-embedding-3-small": "embedding_s1_v1.2"
                                   }
                                 }
                               }
