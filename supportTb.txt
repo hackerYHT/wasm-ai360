@@ -1,0 +1,42 @@
+问题: 	应用的appid 怎么申请	答案: 	白鲸平台申请
+问题: 	das的hints怎么使用？	答案: 	参考文档http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/30843
+问题: 	pmq出现问题怎么办？应该找谁？	答案: 	请联系pmq负责人： 乔广（基础组件）
+问题: 	redis出现问题怎么办？应该找谁？	答案: 	请联系redis负责人： 马帅奇（基础组件）
+问题: 	网关有问题怎么办？应该找谁？	答案: 	请联系网关负责人： 韩贤涛（基础平台）
+问题: 	星云有问题怎么办？应该找谁？	答案: 	请联系星云负责人： 韩贤涛（基础平台）
+问题: 	压测平台有问题怎么办？应该找谁？	答案: 	请联系压测平台负责人： 陈泉浈（基础平台）
+问题: 	自适应扩缩容有问题怎么办？应该找谁？	答案: 	请联系压测平台负责人： 陈泉浈（基础平台）
+问题: 	谛听出现问题怎么办？应该找谁？	答案: 	请联系redis负责人： 许彬（基础组件）
+问题: 	apollo出现问题怎么办？应该找谁？	答案: 	请联系apollo负责人： 胡汉林（基础组件）
+问题: 	需要das接入手册，能给我提供一下吗;	答案: 	参考文档【http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/30925】
+问题: 	需要sentinel接入手册，能给我提供一下吗;	答案: 	参考文档【http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/4839】
+问题: 	需要网关接入手册，能给我提供一下吗;	答案: 	参考文档【http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/5184】
+问题: 	我想要配置一下网关的api，需要在哪里配？有相关的平台可以配置吗？	答案: 	网关的api配置在fat-wormhole.ppdaicorp.com，配置操作参考文档【http://wiki.ppdaicorp.com/doc/detail?pageId=36738033】
+问题: 	分布式存储负责人是谁？	答案: 	请联系分布式存储负责人： 李国伟（基础平台）
+问题: 	das有问题怎么办？应该找谁？解决：no human 	答案: 	请联系das负责人： 叶海涛（基础平台）
+问题: 	sentinel负责人是谁？解决：no human	答案: 	请联系sentinel负责人：陈泉浈（基础平台）
+问题: 	分布式存储负责人是谁？解决：no human	答案: 	请联系分布式存储负责人： 李国伟（基础平台）
+问题: 	无线网关怎么接入？	答案: 	无线网关接入手册：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/5197
+问题: 	H5网关怎么接入？	答案: 	H5网关接入手册：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/5190
+问题: 	多租户网关怎么接入？	答案: 	多租户网关接入手册：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/5193
+问题: 	内网 网关怎么接入？	答案: 	内网网关接入手册：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/5191
+问题: 	sentinel怎么接入？	答案: 	sentinel接入手册：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/4839
+问题: 	sentinel控制台怎么使用？	答案: 	sentinel控制台使用指南：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/4876
+问题: 	怎么用拦截器的方式接入sentinel？	答案: 	拦截器接入sentinel使用指南：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/4873
+问题: 	sentinel支持那些自定义的注解？	答案: 	sentinel自定义注解支持：http://wiki.ppdaicorp.com/sharing_doc/root/4593/doc/4872
+问题: 	分布式存储怎么接入？	答案: 	分布式存储接入手册：http://wiki.ppdaicorp.com/sharing_doc/root/4592/doc/51242
+问题: 	自动扩缩容平台怎么使用？	答案: 	自动扩所容平台使用指南：http://wiki.ppdaicorp.com/sharing_doc/root/4592/doc/41991
+问题: 	压测平台怎么使用？	答案: 	压测平台使用指南：http://wiki.ppdaicorp.com/sharing_doc/root/4592/doc/34112
+问题: 	新人入职手册	答案: 	新人入职手册：http://wiki.ppdaicorp.com/my_doc/root/doc/103087
+问题: 	围栏虚拟机怎么拷贝文件？	答案: 	围栏虚拟机拷贝文件参考文档：http://wiki.ppdaicorp.com/doc/share/u2q_ozdMqpI=
+问题: 	怎么实现将应用请求转发到外网？	答案: 	在测试环境外网对应的nginx上添加配置（外网转到的nginx不是fat的nginx，是第三方网关的）
+问题: 	应用访问下游报错502？	答案: 	可能的原因：1. 没有成功加载到Nginx配 2. 上游站点缺少下游站点的DNS 3. 如果是预发环境，可能是缺少实例
+问题: 		答案: 	解决措施：1. 添加nginx配置，重新reload 2. 手动配置DNS 3. 添加dns，使请求路由到服务
+问题: 	星云串环境，请求下游子环境的应用，结果转发到fat环境的实例上去了？	答案: 	子环境没有实例，请求默认转发到fat环境
+问题: 	应用访问下游报错503？	答案: 	下游应用没有开启mesh
+问题: 	如何给应用更换https证书？	答案: 	星云环境的nginx证书是在星云数据库中维护的，fat环境的nginx证书是在fat nginx机器上的，均需要星云管理员变更，请联系韩贤涛
+问题: 	接入das的站点需要部署到云服务器，不依赖公司的das console，如何进行配置？	答案: 	das-client升级至2.7.2以上，参考国际化das接入文档，http://wiki.ppdaicorp.com/doc/share/hYSXH-WJGAs=
+问题: 	信贷云网关申请验签的秘钥	答案: 	参考wiki描述进行申请，wiki地址为http://confluence.ppdai.com/pages/viewpage.action?pageId=42402474
+问题: 	用户访问信贷云的wormhole，前端跳白页	答案: 	信贷云fat nginx磁盘满了，需要清nginx的log
+问题: 	nginx磁盘满了，导致部分请求body比较大需要写临时文件，写入失败	答案: 	找dba调整db连接数限制
+问题: 	多租户网关OPTION请求返回403错误	答案: 	未进行跨域配置，多租户网关会对OPTION请求进行转发，需在网关下游服务上支持跨域配置
