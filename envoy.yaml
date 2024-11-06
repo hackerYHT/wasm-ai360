@@ -55,17 +55,19 @@ static_resources:
                             value: | # 插件配置
                               {
                                 "provider": {
-                                  "type": "ai360",                                
+                                  "type": "qwen",                                
                                   "apiTokens": [
-                                    "fk3181337376.JM3tvs2UuEvWywnzxDUvFPrC-z_h4_V-dc49d667"
+                                    "sk-098b50506775428f9796378627ab1aad"
                                   ],
                                   "modelMapping": {
-                                  "gpt-4o": "360gpt-turbo-responsibility-8k",
-                                  "gpt-4": "360gpt2-pro",
-                                  "gpt-3.5": "360gpt-turbo",
-                                  "*": "360gpt-pro",
-                                  "gpt-4-turbo-preview": "360gpt2-pro",
-                                  "text-embedding-3-small": "embedding_s1_v1.2"
+                                  "gpt-3": "qwen-turbo",
+                                  "gpt-35-turbo": "qwen-plus",
+                                  "gpt-4-turbo": "qwen-max",
+                                  "gpt-4-*": "qwen-max",
+                                  "gpt-4o": "qwen-vl-plus",
+                                  "text-embedding-v1": "text-embedding-v1",
+                                  "text-embedding-3-small": "text-embedding-v3",
+                                  "*": "qwen-turbo"
                                   }
                                 }
                               }
@@ -98,10 +100,10 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: api.360.cn # API 服务地址
+                      address: dashscope.aliyuncs.com # API 服务地址
                       port_value: 443
       transport_socket:
         name: envoy.transport_sockets.tls
         typed_config:
           "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
-          "sni": "api.360.cn"
+          "sni": "dashscope.aliyuncs.com"
